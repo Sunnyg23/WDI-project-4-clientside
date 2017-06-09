@@ -1,0 +1,9 @@
+{{categories.category}}
+<h1>{{ categories.category.name }}</h1>
+<img ng-src="categories.category.image" alt="">
+<h3>{{ categories.category.name }}'s Products</h3>
+<ul>
+  <li ng-repeat="product in categories.category.products">
+    <p ui-sref="productsShow({id:product.id})">{{ product.name }}</p>
+  </li>
+</ul>

@@ -1,5 +1,5 @@
 angular
-.module('Img')
+.module('Manimal')
 .controller('LoginCtrl', LoginCtrl);
 
 LoginCtrl.$inject = ['User', 'CurrentUserService', '$state', '$rootScope'];
@@ -11,7 +11,7 @@ function LoginCtrl(User, CurrentUserService, $state, $rootScope)  {
     .login(vm.user).$promise
     .then(()  =>  {
       CurrentUserService.getUser();
-      $rootScope.$broadcast('loggedIn');
+      $state.go('home');
     })
     .catch(err => {
       console.log(err);

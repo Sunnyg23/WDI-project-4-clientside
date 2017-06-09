@@ -1,5 +1,5 @@
 angular
-  .module('Img')
+  .module('Manimal')
   .config(Interceptor);
 
 Interceptor.$inject = ['$httpProvider'];

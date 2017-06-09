@@ -1,0 +1,4 @@
+<h1>Categories Index</h1>
+<ul ng-repeat="category in categories.categories">
+  <li><a ui-sref="categoriesShow({id: category.id})">{{category.name}}</a></li>
+</ul>

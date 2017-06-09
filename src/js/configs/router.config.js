@@ -1,5 +1,5 @@
 angular
-.module('Img')
+.module('Manimal')
 .config(Router);
 
 Router.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider'];
@@ -9,7 +9,7 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
   $stateProvider
   .state('home', {
     url: '/',
-    templateUrl: 'js/views/home.html'
+    templateUrl: 'js/views/index.html'
   })
   .state('register', {
     url: '/register',
@@ -21,10 +21,40 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     templateUrl: '/js/views/users/login.html',
     controller: 'LoginCtrl as login'
   })
-  .state('usersIndex', {
-    url: '/users',
-    templateUrl: '/js/views/users/index.html',
-    // controller: 'LoginCtrl as login'
+  .state('usersShow', {
+    url: '/users/:id',
+    templateUrl: '/js/views/users/show.html',
+    controller: 'UsersShowCtrl as users'
+  })
+  .state('categoriesIndex', {
+    url: '/categories',
+    templateUrl: '/js/views/categories/categories_index.html',
+    controller: 'CategoriesIndexCtrl as categories'
+  })
+  .state('categoriesShow', {
+    url: '/categories/:id',
+    templateUrl: '/js/views/categories/categories_show.html',
+    controller: 'CategoriesShowCtrl as categories'
+  })
+  .state('productsIndex', {
+    url: '/products',
+    templateUrl: '/js/views/products/products_index.html',
+    controller: 'ProductsIndexCtrl as products'
+  })
+  .state('productsShow', {
+    url: '/products/:id',
+    templateUrl: '/js/views/products/products_show.html',
+    controller: 'ProductsShowCtrl as products'
+  })
+  .state('brandsIndex', {
+    url: '/brands',
+    templateUrl: '/js/views/brands/brands_index.html',
+    controller: 'BrandsIndexCtrl as brands'
+  })
+  .state('brandsShow', {
+    url: '/brands/:id',
+    templateUrl: '/js/views/brands/brands_show.html',
+    controller: 'BrandsShowCtrl as brands'
   });
 
   $urlRouterProvider.otherwise('/');

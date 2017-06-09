@@ -1,0 +1,12 @@
+<h2>{{ users.user.first_name }} {{ users.user.last_name }}</h2>
+<h3>{{ users.user.email }}</h3>
+
+<div ng-show="users.user.likes">
+  <h4>Likes</h4>
+  <ul>
+    <li ng-repeat="like in users.user.likes">
+      <p>{{ like.product.name }}</p>
+      <button ng-click="users.removeLike(like)">Remove from list</button>
+    </li>
+  </ul>
+</div>

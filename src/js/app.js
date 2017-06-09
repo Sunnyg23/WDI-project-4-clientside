@@ -1,6 +1,6 @@
 
 angular
-  .module('Img',[
+  .module('Manimal',[
     'ui.router',
     'ngResource',
     'angular-jwt'

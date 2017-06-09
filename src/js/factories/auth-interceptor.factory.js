@@ -1,5 +1,5 @@
 angular
-  .module('Img')
+  .module('Manimal')
   .factory('AuthInterceptor', AuthInterceptor);
 
 AuthInterceptor.$inject = ['API', 'TokenService'];

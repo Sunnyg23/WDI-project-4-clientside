@@ -1,5 +1,5 @@
 angular
-  .module('Img')
+  .module('Manimal')
   .service('TokenService', TokenService);
 
 TokenService.$inject = ['$window', 'jwtHelper'];

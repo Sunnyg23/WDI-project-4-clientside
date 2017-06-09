@@ -1,9 +1,9 @@
 angular
-.module('Img')
+.module('Manimal')
 .controller('RegisterCtrl', RegisterCtrl);
 
-RegisterCtrl.$inject = ['User', 'CurrentUserService', '$state', '$rootScope'];
-function RegisterCtrl(User, CurrentUserService, $state, $rootScope){
+RegisterCtrl.$inject = ['User', 'CurrentUserService', '$state'];
+function RegisterCtrl(User, CurrentUserService, $state){
   const vm = this;
 
   vm.register = () => {
@@ -11,8 +11,7 @@ function RegisterCtrl(User, CurrentUserService, $state, $rootScope){
     .register(vm.user).$promise
     .then(()  =>  {
       CurrentUserService.getUser();
-      $rootScope.$broadcast('loggedIn');
-      $state.go('usersIndex');
+      $state.go('home');
     })
     .catch(err => {
       console.log(err);
