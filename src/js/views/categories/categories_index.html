@@ -1,4 +1,6 @@
-<h1>Categories Index</h1>
+
+<h1 class=" bg-black sans-serif lh-copy gold pa1 tracked-tight f-headline-l measure-narrow lh-title mv0 f1 f1-m mv3">Categories Index
+</h1>
 <ul ng-repeat="category in categories.categories">
-  <li><a ui-sref="categoriesShow({id: category.id})">{{category.name}}</a></li>
+  <li><a ui-sref="categoriesShow({id: category.id})">{{category.name}},{{category.image}}</a></li>
 </ul>
