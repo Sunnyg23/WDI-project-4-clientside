@@ -1,34 +1,43 @@
-<h1>Login</h1>
+<h1 class=" lh-copy white pa1 tracked-tight f-headline-l bg-black sans-serif measure-narrow lh-title mv0 f1 f1-m mv3">Login <img src="images/2002.jpg" ui-sref="home" class="fr dib w5 h5 br-100">
+</h1>
 
 <div class="row">
 
   <form name="form" ng-submit="login.login()">
-
-    <div class="form-group col-md-4 col-md-offset-4">
-      <label>Email Address</label>
-      <input ng-model="login.user.email" name="email" type="email" class="form-control" placeholder="Email Address" required>
-      <div ng-show="form.email.$touched">
-        <div ng-messages="form.email.$error">
-          <div ng-message="required">This field is required</div>
-        </div>
-      </div>
+    <div class="pa3 pa5-ns">
+      <ul class="list pl0 measure center">
+        <li class="lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30">
+          <label>Email Address</label>
+          <input ng-model="login.user.email" name="email" type="email" class="form-control" placeholder="Email Address" required>
+          <div ng-show="form.email.$touched">
+            <div ng-messages="form.email.$error">
+              <div ng-message="required">This field is required</div>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
 
-
-    <div class="form-group col-md-4 col-md-offset-4">
-      <label>Password</label>
-      <input ng-model="login.user.password" name="password" type="password" class="form-control" placeholder="Password" >
-      <div ng-show="form.password.$touched">
-        <div ng-messages="form.password.$error">
-          <div ng-message="required">This field is required</div>
-        </div>
-      </div>
+    <div class="pa3 pa5-ns">
+      <ul class="list pl0 measure center">
+        <li class="lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30">
+          <div class="form-group col-md-4 col-md-offset-4">
+            <label>Password</label>
+            <input ng-model="login.user.password" name="password" type="password" class="form-control" placeholder="Password" >
+            <div ng-show="form.password.$touched">
+              <div ng-messages="form.password.$error">
+                <div ng-message="required">This field is required</div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
-<div class="col-md-4 col-md-offset-4">
+    <div class="col-md-4 col-md-offset-4">
 
-    <button type="submit" class="btn btn-default form-control">Login</button>
-</div>
-</form>
+      <button type="submit" class="btn btn-default form-control">Login</button>
+    </div>
+  </form>
 </div>
 
 <div class="fixIt">

@@ -1,10 +1,11 @@
-{{categories.category}}
-<h1 class=" lh-copy white pa1 tracked-tight f-headline-l bg-gold sans-serif measure-narrow lh-title mv0 f1 f1-m mv3">{{ categories.category.name }}
+
+<h1 class=" lh-copy white pa1 tracked-tight f-headline-l bg-gold sans-serif measure-narrow lh-title mv0 f1 f1-m mv3">{{ categories.category.name }} Brands <img src="images/2002.jpg" ui-sref="home" class="fr dib w5 h5 br-100">
 </h1>
+{{categories.category}}
 <img ng-src="categories.category.image" alt="">
-<h3>{{ categories.category.name }}'s Products</h3>
+
 <ul>
-  <li ng-repeat="product in categories.category.products">
-    <p ui-sref="productsShow({id:product.id})">{{ product.name }}</p>
+  <li ng-repeat="brand in categories.category.brands">
+    <p ui-sref="brandsShow({id:brand.id})">{{ brand.name }}</p>
   </li>
 </ul>

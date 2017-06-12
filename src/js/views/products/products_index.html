@@ -1,6 +1,8 @@
-<h1 class=" lh-copy white pa1 tracked-tight f-headline-l bg-gold sans-serif measure-narrow lh-title mv0 f1 f1-m mv3">Products Index
+<h1 class=" lh-copy white pa1 tracked-tight f-headline-l bg-gold sans-serif measure-narrow lh-title mv0 f1 f1-m mv3">Products Index <img src="images/2002.jpg" ui-sref="home" class="fr dib w5 h5 br-100">
 </h1>
-
+<ul ng-repeat="brand in brands.brands">
+  <li><a ui-sref="brandsShow({id: brand.id})">{{brand.name}},</a></li>
+</ul>
 {{products.products}}
 
 <section class="flex-ns vh-100 items-center">

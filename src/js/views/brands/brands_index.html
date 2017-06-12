@@ -1,3 +1,29 @@
-<h1>Brands Index</h1>
+<h1 class=" bg-black sans-serif lh-copy gold pa1 tracked-tight f-headline-l measure-narrow lh-title mv0 f1 f1-m mv3">Brands Index <img src="images/2002.jpg" ui-sref="home" class="fr dib w5 h5 br-100">
+</h1>
 
-{{brands.brands}}
+
+{{brands.brands.name}}
+<!-- <ul ng-repeat="brand in brands.brands">
+  <li><a ui-sref="brandsShow({id: brand.id})">{{brand.name}},</a></li>
+</ul> -->
+
+  <!-- <div class="dib mr2 w-50 w-25-ns ph3 ph5-ns pv4">
+    <a ui-sref="brandsShow({id: brand.id})" ng-repeat="brand in brands.brands" class="pv2 db no-underline black"><img class="db w-100" src="/images/brands/13.jpg">{{brands.brands.name}}</a>
+  </div> -->
+  <main class="mw6 center">
+    <article>
+      <a class="link dt w-100 bb b--black-10 pb2 mt2 dim blue" ui-sref="brandsShow({id: brand.id})" ng-repeat="brand in brands.brands">
+        <div class="dtc w3">
+          <img src="/images/brands/13.jpg" class="db w-100"/>
+        </div>
+        <div class="dtc v-top pl2">
+          <h1 class="f6 f5-ns fw6 lh-title black mv0">{{brand.name}}</h1>
+          <!-- <h2 class="f6 fw4 mt2 mb0 black-60">Josef Müller-Brockmann</h2> -->
+          <dl class="mt2 f6">
+            <dt class="clip">Price</dt>
+            <dd class="ml0">$75.00</dd>
+          </dl>
+        </div>
+      </a>
+    </article>
+  </main>
