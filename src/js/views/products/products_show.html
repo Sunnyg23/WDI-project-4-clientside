@@ -1,70 +1,29 @@
-<h1 class=" lh-copy white pa1 tracked-tight f-headline-l bg-gold sans-serif measure-narrow lh-title mv0 f1 f1-m mv3">{{ products.product.name }} Products <img src="images/2002.jpg" ui-sref="home" class="fr dib w5 h5 br-100">
+<h1 class=" lh-copy black pa1 tracked-tight f-headline-l bg-gold sans-serif measure-narrow lh-title mv0 f1 f1-m mv3 productbackground">{{ products.product.name }}<img ng-mouseover="login.gorillaImg = 'images/3000.jpg'"  ng-mouseleave="login.gorillaImg = 'images/2999.jpg'" src="{{ login.gorillaImg }}" ui-sref="home" class="fr dib w5 h5 br-100 grow">
 </h1>
-{{products.product}}
-<!--
-{{products.product}}
-{{products.product}}
-<img ng-src="products.product.image" alt="">
-<button ng-disabled="products.disabled" ng-click="products.likeProduct()">Like</button>
+<br>
+<br>
+
+<img class="{{brands.product.images}}">
+<img class="{{vm.products}}">
+
+<div>
+<div class="cf pt5" >
+  <div ng-repeat="product in products.product.name">
+    <div class="fl w-50 w-25-m w-33-l pa2 grow" >
+      <a ui-sref="productsShow({id: products.product.id})"  class="aspect-ratio aspect-ratio--1x1 db link dim tc" >
+        <img class="{{products.product.image}}">
+        <div class="aspect-ratio--object cover w-100 db outline black-10 br-75"
+        style="background: url({{product.image}}) center;">&nbsp;</div>
+      </a>
+      <p>{{product.name}}</p>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+<img ng-src="products.product.image" alt="" ng-repeat="{{products.product}}">
+<button class="f6 grow no-underline br-pill ph3 pv2 mb2 dib gold bg-black" ng-disabled="products.disabled" ng-click="products.likeProduct()">Add To Basket</button>
 <div class="dt-ns dt--fixed-ns">
-  <div class="dtc-ns tc pv4 bg-black-10">
-    <article class="br2 ba dark-gray b--black-10 mv4 w-120 w-60-m w-30-l mw10 center">
-      <img ng-src="products.product.image" class="db w-100 br2 br--top" alt="Photo of a kitten looking menacing.">
-      <div class="pa2 ph3-ns pb3-ns">
-        <div class="dt w-100 mt1">
-          <div class="dtc">
-            <h1 class="f5 f4-ns mv0">{{ products.product.name }}</h1>
-          </div>
-          <div class="dtc tr">
-            <h2 class="f5 mv0">$1,000</h2>
-          </div>
-        </div>
-        <p class="f6 lh-copy measure mt2 mid-gray">
-          If it fits, i sits burrow under covers. Destroy couch leave hair everywhere,
-          and touch water with paw then recoil in horror.
-        </p>
-      </div>
-      <button ng-disabled="products.disabled" ng-click="products.likeProduct()">Like</button>
-    </article>
-  </div>
-
-
-  <div class="dtc-ns tc pv4 bg-black-05">
-    <article class="br2 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l mw5 center">
-      <img src="http://placekitten.com/g/600/300" class="db w-100 br2 br--top" alt="Photo of a kitten looking menacing.">
-      <div class="pa2 ph3-ns pb3-ns">
-        <div class="dt w-100 mt1">
-          <div class="dtc">
-            <h1 class="f5 f4-ns mv0">Cat</h1>
-          </div>
-          <div class="dtc tr">
-            <h2 class="f5 mv0">$1,000</h2>
-          </div>
-        </div>
-        <p class="f6 lh-copy measure mt2 mid-gray">
-          If it fits, i sits burrow under covers. Destroy couch leave hair everywhere,
-          and touch water with paw then recoil in horror.
-        </p>
-      </div>
-    </article>
-  </div>
-  <div class="dtc-ns tc pv4 bg-black-10">
-    <article class="br2 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l mw5 center">
-      <img src="http://placekitten.com/g/600/300" class="db w-100 br2 br--top" alt="Photo of a kitten looking menacing.">
-      <div class="pa2 ph3-ns pb3-ns">
-        <div class="dt w-100 mt1">
-          <div class="dtc">
-            <h1 class="f5 f4-ns mv0">Cat</h1>
-          </div>
-          <div class="dtc tr">
-            <h2 class="f5 mv0">$1,000</h2>
-          </div>
-        </div>
-        <p class="f6 lh-copy measure mt2 mid-gray">
-          If it fits, i sits burrow under covers. Destroy couch leave hair everywhere,
-          and touch water with paw then recoil in horror.
-        </p>
-      </div>
-    </article>
-  </div>
-</div> -->

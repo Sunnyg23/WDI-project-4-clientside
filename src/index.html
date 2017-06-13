@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="Manimal">
 <head>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
   <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css"/>
   <base href="/">
   <meta charset="utf-8">
@@ -11,6 +12,8 @@
   <!-- endinject -->
 </head>
 <body ng-controller="MainCtrl as main">
+
+
   <!-- <nav>
   <ul>
   <li ng-hide="main.user"><a ui-sref="register">Register</a></li>
@@ -24,23 +27,25 @@
 </div>
 </nav> -->
 <nav class="dt w-100 border-box pa3 ph5-ns">
-  <!-- <a class="dtc v-mid mid-gray link dim w-25" ng-hide="main.user"  ui-sref="home" title="home">
-    <img src="images/2002.jpg" class="dib w2 h2 br-100" alt="Site Name">
-  </a> -->
+<h3>Logged in as {{main.user.username}}</h3>
+
+
   <div class="dtc v-mid w-75 tr">
     <!-- <a class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns" ng-show="main.user" ui-sref="home" title="About">Home</a> -->
 
-    <a class="link b white pv2 db bg-gold bg-animate hover-bg-black f6 f5-ns dib mr3 mr4-ns" ng-hide="main.user" ui-sref="register" title="About">Register</a>
+    <a class="link b white pv2 db bg-gold bg-animate hover-bg-black f6 f5-ns dib mr3 mr4-ns grow" ng-hide="main.user" ui-sref="register" title="About">Register</a>
 
-    <a class="link b white pv2 db bg-gold bg-animate hover-bg-black f6 f5-ns dib mr3 mr4-ns" ng-hide="main.user" ui-sref="login" title="Store">Login</a>
-
-
-    <a class="link b white pv2 db bg-gold bg-animate hover-bg-black f6 f5-ns dib mr3 mr4-ns" ng-show="main.user" ui-sref="categoriesIndex" title="Store">Search Catergories</a>
+    <a class="link b white pv2 db bg-gold bg-animate hover-bg-black f6 f5-ns dib mr3 mr4-ns grow" ng-hide="main.user" ui-sref="login" title="Store">Login</a>
 
 
-    <a class="link b white pv2 db bg-gold bg-animate hover-bg-black f6 f5-ns dib mr3 mr4-ns" ng-show="main.user" ui-sref="brandsIndex" title="Store">Search Brands</a>
+    <a class="link b white pv2 db bg-gold bg-animate hover-bg-black f6 f5-ns dib mr3 mr4-ns grow" ng-show="main.user" ui-sref="categoriesIndex" title="Store">Search Catergories</a>
 
-    <a class="link b white pv2 db bg-gold bg-animate hover-bg-black f6 f5-ns dib mr3 mr4-ns"  ng-show="main.user" ui-sref="usersShow({id:main.user.id})" >Logged in as {{main.user.username}}</a>
+
+    <a class="link b white pv2 db bg-gold bg-animate hover-bg-black f6 f5-ns dib mr3 mr4-ns grow" ng-show="main.user" ui-sref="brandsIndex" title="Store">Search Brands</a>
+
+    <a class="link b white pv2 db bg-gold bg-animate hover-bg-black f6 f5-ns dib mr3 mr4-ns grow" ng-show="main.user" ui-sref="productsIndex" title="Store">Search Products</a>
+
+    <a class="link b white pv2 db bg-gold bg-animate hover-bg-black f6 f5-ns dib mr3 mr4-ns grow"  ng-show="main.user" ui-sref="usersShow({id:main.user.id})" >Basket</a>
 
     <a ng-click="main.logout()" class="link b white pv2 db bg-gold bg-animate hover-bg-black f6 f5-ns dib mr3 mr4-ns" ng-show="main.user" href="javascript:void(0)">Logout</a>
   </div>
@@ -48,93 +53,54 @@
 </nav>
 
 
-<main ui-view>
+<body>
 
 
-  <main class="cf pa2">
-    <hr>
-    <div class="fl w-100 w-50-ns ph2">
-
-      <a ui-sref="categoriesIndex({id:1})" class="no-underline pv2 grow db"><img class="db w-100" src="/images/categories/2.jpg"></a>
-      <a ui-sref="categoriesIndex({id:1})" class="no-underline pv2 grow db"><img class="db w-100" src="/images/categories/6.jpg"/></a>
-    </div>
-    <div class="fl w-50 w-25-ns ph2">
-      <a ui-sref="categoriesIndex({id: category.id})" class="pv2 grow db no-underline black" hover-bg-black><img class="db w-100" src="/images/categories/3.jpg"></a>
-      <a ui-sref="categoriesIndex({id:1})" class="link b black pv2 db bg-animate hover-bg-black f6 f5-ns dib mr3 mr4-ns">
-        <header class="tc ph4">
-        <h1 class=" lh-copy white pa1 tracked-tight f-headline-l bg-gold sans-serif measure-narrow lh-title mv0 f1 f1-m mv3">
-          Manimal
-        </h1>
-        <h2 class="f5 f4-m f3-l fw2 black-50 mt0 bg-black-90 lh-copy white pa1 tracked-tight lh-copy" >
-          The Online Store for Men
-        </h2>
-        <img src="images/2002.jpg" ui-sref="home" class="fr dib w5 h5 br-100">
-      </header></a>
-      <a ui-sref="categoriesIndex({id: category.id})" class="pv2 grow db no-underline black"><img class="db w-100" src="/images/categories/5.jpg"> </a>
-    </div>
-
-    <div class="fl w-50 w-25-ns ph2">
-      <a ui-sref="categoriesIndex({id: category.id})" class="pv2 grow db no-underline black"><img class="db w-100" src="/images/categories/4.jpg"></a>
-      <a ui-sref="categoriesIndex({id: category.id})" class="pv2 grow db no-underline black"><img class="db w-100" src="/images/categories/1.jpg"></a>
-
-    </div>
-    <header class="bg-white sans-serif">
-      <div class="mw9 center pa4 pt5-ns ph7-l">
-        <time class="f6 mb2 dib ttu tracked"><small></small></time>
-        <h3 class="f2 f1-m f-headline-l measure-narrow lh-title mv0">
-          <span class="bg-black-90 lh-copy gold pa1 tracked-tight">
-            "When women are depressed they either eat or go shopping. Men invade another country."
-          </span>
-        </h3>
-        <h4 class="f3 fw1 georgia i">– Elayne Boosler.</h4>
-        <h5 class="f6 ttu tracked black-80"></h5>
-      </div>
-    </header>
-
-    </main>
-
+  <main ui-view>
   </main>
-
 </body>
-<footer class="pa4 pa5-l black-70 bt b--black-10">
+
+
+
+<footer class="pa4 pa5-l white bt b--black-10 parallax">
   <div class="mb4-l cf">
     <h1 class="fl w-100 pv0 f6 fw6 ttu tracked mb4">Affiliated Sites</h1>
     <article class="fl w-50 dib-ns w-auto-ns mr4-m mr5-l mb4 pr2 pr0-ns">
       <h4 class="f5 f4-l fw6">Colour Game</h4>
-      <span class="f7 f6-l db black-70">WDI-Project-1 (HTML CSS JavaScript)</span>
-      <span class="f7 f6-l black-70">GA London </span>
-      <a class="link b black pv2 db bg-animate hover-bg-yellow f6 f5-ns dib mr3 mr4-ns" title="Call SF" href="https://desolate-forest-29347.herokuapp.com/">
+      <span class="f7 f6-l db white">WDI-Project-1 (HTML CSS JavaScript)</span>
+      <span class="f7 f6-l white">GA London </span>
+      <a class="link b white pv2 db bg-animate hover-bg-gold f6 f5-ns dib mr3 mr4-ns" title="Call SF" href="https://desolate-forest-29347.herokuapp.com/">
         Colourgame.co.uk
       </a>
     </article>
     <article class="fl w-50 dib-ns w-auto-ns mr4-m mr5-l mb4 pl2 pl0-ns">
       <h4 class="f5 f4-l fw6">Divvy</h4>
-      <span class="f7 f6-l db black-70">
+      <span class="f7 f6-l db white">
         WDI-Project-2 (Express EJS Node)
       </span>
-      <span class="f7 f6-l di black-70">
+      <span class="f7 f6-l di white">
         GA London
       </span>
-      <a href="https://stark-cove-93494.herokuapp.com" class="link b black pv2 db bg-animate hover-bg-yellow f6 f5-ns dib mr3 mr4-ns" title="Call the LA office.">
+      <a href="https://stark-cove-93494.herokuapp.com" class="link b white pv2 db bg-animate hover-bg-gold f6 f5-ns dib mr3 mr4-ns" title="Call the LA office.">
         Divvy.co.uk
       </a>
     </article>
     <article class="fl w-50 dib-ns w-auto-ns mr4-m mr5-l mb4 pr2 pr0-ns">
       <h4 class="f5 f4-l fw6">Vegan Chef</h4>
-      <span class="f7 f6-l db black-70">WDI-Project-3 (Angular MongoDB)</span>
-      <span class="f7 f6-l black-70">GA London</span>
-      <a href="https://veganchef.herokuapp.com/" class="link b black pv2 db bg-animate hover-bg-gold f6 f5-ns dib mr3 mr4-ns" title="Call the London office">Veganchef.co.uk</a>
+      <span class="f7 f6-l db white">WDI-Project-3 (Angular MongoDB)</span>
+      <span class="f7 f6-l white">GA London</span>
+      <a href="https://veganchef.herokuapp.com/" class="link b white pv2 db bg-animate hover-bg-gold f6 f5-ns dib mr3 mr4-ns" title="Call the London office">Veganchef.co.uk</a>
     </article>
     <article class="fl w-50 dib-ns w-auto-ns mr4-m mr5-l mb4 pr2 pr0-ns">
       <h4 class="f5 f4-l fw6">Manimal</h4>
-      <span class="f7 f6-l db black-70">WDI-Project-4 (Ruby Rails Angular)</span>
-      <span class="f7 f6-l black-70">GA London</span>
-      <a href="#" class="link b black pv2 db bg-animate hover-bg-gold f6 f5-ns dib mr3 mr4-ns" title="Call the London office">Manimal.co.uk</a>
+      <span class="f7 f6-l db white">WDI-Project-4 (Ruby Rails Angular)</span>
+      <span class="f7 f6-l white">GA London</span>
+      <a href="#" class="link b white pv2 db bg-animate hover-bg-gold f6 f5-ns dib mr3 mr4-ns" title="Call the London office">Manimal.co.uk</a>
     </article>
   </div>
   <section class="cf mb5">
     <div class="mb4 mb0-ns w-100 w-50-l fr">
-      <a class="link b black pv2 db bg-animate hover-bg-yellow f6 f5-ns dib mr3 mr4-ns" href="mailto:hello@impossible.com" >
+      <a class="link b white pv2 db bg-animate hover-bg-gold f6 f5-ns dib mr3 mr4-ns" href="mailto:hello@impossible.com" >
         hello@manimal.com
       </a>
     </div>
@@ -142,63 +108,63 @@
       <p class="f4 fw6 mb2 f6 mt0">
         Sign up for our manletter.
       </p>
-      <input placeholder="Email Address" class="mw-100 w-100 w5-ns f5 input-reset ba b--black-20 pv3 ph4 border-box">
-      <input type="submit" class="input-reset w-100 w-auto-ns bg-black-80 white f5 pv2 pv3-ns ph4 ba b--black-80 bg-hover-mid-gray">
+      <input placeholder="Email Address" class="mw-100 w-100 w5-ns f5 input-reset ba b--white-20 pv3 ph4 border-box">
+      <input type="submit" class="input-reset w-100 w-auto-ns bg-black-80 white f5 pv2 pv3-ns ph4 ba b--white-80 bg-hover-mid-gray">
     </div>
   </section>
   <!-- <div class="dt dt--fixed w-100" >
-    <div class="dn dtc-ns v-mid">
-      <p class="f7 black-70 dib pr3 mb3">
-        Copyright © Manimal 2048
-      </p>
-    </div> -->
-    <!-- <div class="db dtc-ns black-70 tc tr-ns v-mid">
-      <a href="https://www.facebook.com/" class="link b black pv2 db bg-animate hover-bg-yellow f6 f5-ns dib mr3 mr4-ns" title="Impossible Labs on Facebook">
-        <svg class="db w2 h2" data-icon="facebook" viewbox="0 0 32 32" fill="currentColor">
-          <title >facebook icon</title>
-          <path d="M8 12 L13 12 L13 8 C13 2 17 1 24 2 L24 7 C20 7 19 7 19 10 L19 12 L24 12 L23 18 L19 18 L19 30 L13 30 L13 18 L8 18 z"
-          ></path>
-        </svg>
-      </a>
-      <a href="https://twitter.com/" class="link b black pv2 db bg-animate hover-bg-yellow f6 f5-ns dib mr3 mr4-ns">
-        <svg class="db w2 h2" data-icon="twitter" viewbox="0 0 32 32"
-        fill="currentColor" >
-        <title >twitter icon</title>
-        <path d="M2 4 C6 8 10 12 15 11 A6 6 0 0 1 22 4 A6 6 0 0 1 26 6 A8 8 0 0 0 31 4 A8 8 0 0 1 28 8 A8 8 0 0 0 32 7 A8 8 0 0 1 28 11 A18 18 0 0 1 10 30 A18 18 0 0 1 0 27 A12 12 0 0 0 8 24 A8 8 0 0 1 3 20 A8 8 0 0 0 6 19.5 A8 8 0 0 1 0 12 A8 8 0 0 0 3 13 A8 8 0 0 1 2 4"
-        ></path>
-      </svg>
-    </a>
-    <a href="https://medium.com/" class="link b black pv2 db bg-animate hover-bg-yellow f6 f5-ns dib mr3 mr4-ns" title="Impossible Labs on Medium">
-      <svg class="db w2 h2" x="0px" y="0px" viewbox="0 0 290 248.6"
-      fill="currentColor" >
-      <g >
-        <path fill="currentColor" class="st0" d="M287.8,46.3L196,0.3c-0.4-0.2-0.9-0.3-1.3-0.3c0,0-0.1,0-0.1,0c-1.1,0-2.2,0.6-2.8,1.5l-56.6,92l63.2,102.7 l90.4-146.9C289.4,48.3,289,46.8,287.8,46.3z"
-        ></path>
-        <polygon fill="currentColor" points="105.2,61.2 105.2,160.3 193.3,204.4 	"
-        ></polygon>
-        <path fill="currentColor" d="M201,208.2l80.9,40.5c4.4,2.2,8,0,8-5v-180L201,208.2z"
-        ></path>
-        <path fill="currentColor" d="M95.5,46.7L10.7,4.3L5.4,1.7C4.6,1.3,3.8,1.1,3.2,1.1c-0.9,0-1.7,0.4-2.3,1.1C0.3,2.8,0,3.8,0,5v193.4 c0,3.3,2.4,7.2,5.4,8.7l83.3,41.6c1.2,0.6,2.3,0.9,3.3,0.9c2.8,0,4.8-2.2,4.8-5.8V48.7C96.7,47.8,96.2,47.1,95.5,46.7z"
-        ></path>
-      </g>
-    </svg>
-  </a>
-  <a href="https://www.linkedin.com/company/" class="link b black pv2 db bg-animate hover-bg-yellow f6 f5-ns dib mr3 mr4-ns">
-    <svg class="db w2 h2" x="0px" y="0px" viewbox="0 0 48 48" >
-      <lineargradient gradientunits="userSpaceOnUse" x1="23.9995"
-      y1="0" x2="23.9995" y2="48.0005" >
-      <stop offset="0" ></stop>
-      <stop offset="1" ></stop>
-    </lineargradient>
-    <path fill="currentColor" d="M48,42c0,3.313-2.687,6-6,6H6c-3.313,0-6-2.687-6-6V6 c0-3.313,2.687-6,6-6h36c3.313,0,6,2.687,6,6V42z"
-    ></path>
-    <g >
-      <g >
-        <path fill="#FFFFFF" d="M15.731,11.633c-1.608,0-2.658,1.083-2.625,2.527c-0.033,1.378,1.018,2.494,2.593,2.494 c1.641,0,2.691-1.116,2.691-2.494C18.357,12.716,17.339,11.633,15.731,11.633z M13.237,35.557h4.988V18.508h-4.988V35.557z M31.712,18.748c-1.595,0-3.222-0.329-4.956,2.36h-0.099l-0.087-2.599h-4.417c0.065,1.411,0.074,3.518,0.074,5.52v11.529h4.988 v-9.854c0-0.46,0.065-0.919,0.196-1.248c0.328-0.919,1.149-1.871,2.527-1.871c1.805,0,2.527,1.411,2.527,3.479v9.494h4.988V25.439 C37.455,20.713,34.993,18.748,31.712,18.748z"
-        ></path>
-      </g>
-    </g>
-  </svg>
+  <div class="dn dtc-ns v-mid">
+  <p class="f7 white dib pr3 mb3">
+  Copyright © Manimal 2048
+</p>
+</div> -->
+<!-- <div class="db dtc-ns black-70 tc tr-ns v-mid">
+<a href="https://www.facebook.com/" class="link b black pv2 db bg-animate hover-bg-gold f6 f5-ns dib mr3 mr4-ns" title="Impossible Labs on Facebook">
+<svg class="db w2 h2" data-icon="facebook" viewbox="0 0 32 32" fill="currentColor">
+<title >facebook icon</title>
+<path d="M8 12 L13 12 L13 8 C13 2 17 1 24 2 L24 7 C20 7 19 7 19 10 L19 12 L24 12 L23 18 L19 18 L19 30 L13 30 L13 18 L8 18 z"
+></path>
+</svg>
+</a>
+<a href="https://twitter.com/" class="link b black pv2 db bg-animate hover-bg-gold f6 f5-ns dib mr3 mr4-ns">
+<svg class="db w2 h2" data-icon="twitter" viewbox="0 0 32 32"
+fill="currentColor" >
+<title >twitter icon</title>
+<path d="M2 4 C6 8 10 12 15 11 A6 6 0 0 1 22 4 A6 6 0 0 1 26 6 A8 8 0 0 0 31 4 A8 8 0 0 1 28 8 A8 8 0 0 0 32 7 A8 8 0 0 1 28 11 A18 18 0 0 1 10 30 A18 18 0 0 1 0 27 A12 12 0 0 0 8 24 A8 8 0 0 1 3 20 A8 8 0 0 0 6 19.5 A8 8 0 0 1 0 12 A8 8 0 0 0 3 13 A8 8 0 0 1 2 4"
+></path>
+</svg>
+</a>
+<a href="https://medium.com/" class="link b black pv2 db bg-animate hover-bg-gold f6 f5-ns dib mr3 mr4-ns" title="Impossible Labs on Medium">
+<svg class="db w2 h2" x="0px" y="0px" viewbox="0 0 290 248.6"
+fill="currentColor" >
+<g >
+<path fill="currentColor" class="st0" d="M287.8,46.3L196,0.3c-0.4-0.2-0.9-0.3-1.3-0.3c0,0-0.1,0-0.1,0c-1.1,0-2.2,0.6-2.8,1.5l-56.6,92l63.2,102.7 l90.4-146.9C289.4,48.3,289,46.8,287.8,46.3z"
+></path>
+<polygon fill="currentColor" points="105.2,61.2 105.2,160.3 193.3,204.4 	"
+></polygon>
+<path fill="currentColor" d="M201,208.2l80.9,40.5c4.4,2.2,8,0,8-5v-180L201,208.2z"
+></path>
+<path fill="currentColor" d="M95.5,46.7L10.7,4.3L5.4,1.7C4.6,1.3,3.8,1.1,3.2,1.1c-0.9,0-1.7,0.4-2.3,1.1C0.3,2.8,0,3.8,0,5v193.4 c0,3.3,2.4,7.2,5.4,8.7l83.3,41.6c1.2,0.6,2.3,0.9,3.3,0.9c2.8,0,4.8-2.2,4.8-5.8V48.7C96.7,47.8,96.2,47.1,95.5,46.7z"
+></path>
+</g>
+</svg>
+</a>
+<a href="https://www.linkedin.com/company/" class="link b black pv2 db bg-animate hover-bg-gold f6 f5-ns dib mr3 mr4-ns">
+<svg class="db w2 h2" x="0px" y="0px" viewbox="0 0 48 48" >
+<lineargradient gradientunits="userSpaceOnUse" x1="23.9995"
+y1="0" x2="23.9995" y2="48.0005" >
+<stop offset="0" ></stop>
+<stop offset="1" ></stop>
+</lineargradient>
+<path fill="currentColor" d="M48,42c0,3.313-2.687,6-6,6H6c-3.313,0-6-2.687-6-6V6 c0-3.313,2.687-6,6-6h36c3.313,0,6,2.687,6,6V42z"
+></path>
+<g >
+<g >
+<path fill="#FFFFFF" d="M15.731,11.633c-1.608,0-2.658,1.083-2.625,2.527c-0.033,1.378,1.018,2.494,2.593,2.494 c1.641,0,2.691-1.116,2.691-2.494C18.357,12.716,17.339,11.633,15.731,11.633z M13.237,35.557h4.988V18.508h-4.988V35.557z M31.712,18.748c-1.595,0-3.222-0.329-4.956,2.36h-0.099l-0.087-2.599h-4.417c0.065,1.411,0.074,3.518,0.074,5.52v11.529h4.988 v-9.854c0-0.46,0.065-0.919,0.196-1.248c0.328-0.919,1.149-1.871,2.527-1.871c1.805,0,2.527,1.411,2.527,3.479v9.494h4.988V25.439 C37.455,20.713,34.993,18.748,31.712,18.748z"
+></path>
+</g>
+</g>
+</svg>
 </a>
 </div>
 </div> -->
@@ -246,5 +212,4 @@
   </a>
 </div>
 </footer>
-
 </html>

@@ -1,0 +1,33 @@
+.parallax {
+    /* The image used */
+    background-image: url("/images/1504.jpg");
+
+    /* Set a specific height */
+    min-height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sunny{
+  background-image: url("/images/1504.jpg");
+}
+.brandbackground{
+  background-image: url("/images/1501.jpg");
+}
+.productbackground{
+  background-image: url("/images/1503.jpg");
+}
+.fixIt{
+  height: 20px;
+}
+// #front{
+//   opacity: 1;
+//   z-index:10;
+// }
+// #front:hover{
+//   opactiy:0;
+// }

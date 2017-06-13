@@ -5,6 +5,8 @@ angular
 UsersShowCtrl.$inject = ['$stateParams', 'User', 'Like'];
 function UsersShowCtrl($stateParams, User, Like) {
   const vm = this;
+  
+  vm.gorillaImg = 'images/2999.jpg';
   vm.user = User.get($stateParams);
   vm.removeLike = removeLike;
 

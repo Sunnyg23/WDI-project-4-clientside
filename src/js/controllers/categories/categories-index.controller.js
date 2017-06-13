@@ -5,7 +5,7 @@ angular
 CategoriesIndexCtrl.$inject = ['Category'];
 function CategoriesIndexCtrl(Category) {
   const vm = this;
-
+  vm.gorillaImg = 'images/2999.jpg';
   categoriesIndex();
 
   function categoriesIndex() {

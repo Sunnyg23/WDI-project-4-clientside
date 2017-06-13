@@ -1,11 +1,18 @@
-
-<h1 class=" lh-copy white pa1 tracked-tight f-headline-l bg-gold sans-serif measure-narrow lh-title mv0 f1 f1-m mv3">{{ categories.category.name }} Brands <img src="images/2002.jpg" ui-sref="home" class="fr dib w5 h5 br-100">
+<h1 class=" lh-copy gold pa1 tracked-tight f-headline-l bg-gold sans-serif measure-narrow lh-title mv0 f1 f1-m mv3 sunny">{{ categories.category.name }} Brands <img ng-mouseover="categories.gorillaImg = 'images/3000.jpg'" ng-mouseleave="categories.gorillaImg = 'images/2999.jpg'" src="{{categories.gorillaImg}}" ui-sref="home" class="fr dib w5 h5 br-100 grow">
 </h1>
-{{categories.category}}
-<img ng-src="categories.category.image" alt="">
+<br>
+<br>
+<div>
+  <div class="cf pt5" >
+    <div ng-repeat="product in categories.category.brands">
+      <div class="fl w-50 w-25-m w-33-l pa2 grow">
+        <p class ="bg-black sans-serif lh-copy gold pa4 tracked-tight f-headline measure-narrow lh-title mv0 f1 f1-m mv3 center sunny ">{{brands.name}}</p>
+        <a ui-sref="brandsShow({id: product.id})"  class="aspect-ratio aspect-ratio--1x1 db link dim tc" >
+          <div class="aspect-ratio--object cover w-100 db outline black-10"
+          style="background: url({{product.image}}) center;">&nbsp;</div>
+        </a>
 
-<ul>
-  <li ng-repeat="brand in categories.category.brands">
-    <p ui-sref="brandsShow({id:brand.id})">{{ brand.name }}</p>
-  </li>
-</ul>
+      </div>
+    </div>
+  </div>
+</div>

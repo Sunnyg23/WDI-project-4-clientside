@@ -5,6 +5,7 @@ angular
 LoginCtrl.$inject = ['User', 'CurrentUserService', '$state', '$rootScope'];
 function LoginCtrl(User, CurrentUserService, $state, $rootScope)  {
   const vm = this;
+  vm.gorillaImg = 'images/2999.jpg';
 
   vm.login = () => {
     User

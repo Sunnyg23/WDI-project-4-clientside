@@ -1,25 +1,52 @@
 
-<h1 class=" bg-black sans-serif lh-copy gold pa1 tracked-tight f-headline-l measure-narrow lh-title mv0 f1 f1-m mv3">Categories Index<img src="images/2002.jpg"  ui-sref="home" class="fr dib w5 h5 br-100">
-</h1>
+<h1 class=" bg-black sans-serif lh-copy gold pa1 tracked-tight f-headline-l measure-narrow lh-title mv0 f1 f1-m mv3 sunny">Categories <img ng-mouseover="categories.gorillaImg = 'images/3000.jpg'"  ng-mouseleave="categories.gorillaImg = 'images/2999.jpg'" src="{{ categories.gorillaImg }}" ui-sref="home" class="fr dib w5 h5 br-100 grow"></h1>
 <!-- <ul ng-repeat="category in categories.categories">
-  <li><a ui-sref="categoriesShow({id: category.id})">{{category.name}},{{category.image}}</a></li>
+<li><a ui-sref="categoriesShow({id: category.id})">{{category.name}},{{category.image}}</a></li>
 </ul> -->
 
 
-<main class="mw6 center">
-  <article>
-    <a class="link dt w-100 bb b--black-10 pb2 mt2 dim blue" ui-sref="categoriesShow({id: category.id})" ng-repeat="category in categories.categories">
-      <div class="dtc w3">
-        <img src="/images/categories/13.jpg" class="db w-100"/>
+<!-- <main class="mw6 center">
+<article>
+<a class="link dt w-100 bb b--black-10 pb2 mt2 dim blue" ui-sref="categoriesShow({id: category.id})" ng-repeat="category in categories.categories">
+<div class="dtc w3">
+<img ng-src="{{category.image }}" class="db w-100"/>
+</div>
+<div class="dtc v-top pl2">
+<h1 class="f6 f5-ns fw6 lh-title black mv0">{{category.name}}</h1>
+
+</div>
+</a>
+</article>
+</main> -->
+
+
+<br>
+<br>
+<div>
+  <div class="cf pt5" >
+    <div ng-repeat="category in categories.categories">
+      <div class="fl w-50 w-25-m w-33-l pa2 grow" >
+        <p class ="bg-black sans-serif lh-copy gold pa1 tracked-tight f-headline measure-narrow lh-title mv0 f1 f1-m mv3 center sunny ">{{category.name}}</p>
+        <a ui-sref="categoriesShow({id: category.id})"  class="aspect-ratio aspect-ratio--1x1 db link dim tc">
+          <div class="aspect-ratio--object cover w-100 db outline black-10"
+          style="background: url({{category.image}}) center;">&nbsp;</div>
+
+        </a>
+
       </div>
-      <div class="dtc v-top pl2">
-        <h1 class="f6 f5-ns fw6 lh-title black mv0">{{category.name}}</h1>
-        <!-- <h2 class="f6 fw4 mt2 mb0 black-60">Josef Müller-Brockmann</h2> -->
-        <dl class="mt2 f6">
-          <dt class="clip">Price</dt>
-          <dd class="ml0">$75.00</dd>
-        </dl>
-      </div>
-    </a>
-  </article>
-</main>
+    </div>
+  </div>
+</div>
+
+<header class="bg-white sans-serif">
+  <div class="mw9 center pa4 pt5-ns ph7-l">
+    <time class="f6 mb2 dib ttu tracked"><small></small></time>
+    <h3 class="f2 f1-m f-headline-l measure-narrow lh-title mv0">
+      <span class="bg-black-90 lh-copy gold pa1 tracked-tight">
+        "Men don’t care what’s on TV. They only care what else is on TV."
+      </span>
+    </h3>
+    <h4 class="f3 fw1 georgia i">– Elayne Boosler.</h4>
+    <h5 class="f6 ttu tracked black-80"></h5>
+  </div>
+</header>

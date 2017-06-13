@@ -7,6 +7,7 @@ angular
 ProductsShowCtrl.$inject = ['$stateParams', 'Product', 'Like', 'CurrentUserService'];
 function ProductsShowCtrl($stateParams, Product, Like, CurrentUserService) {
   const vm = this;
+  vm.gorillaImg = 'images/2999.jpg';
   vm.likeProduct = likeProduct;
 
   Product

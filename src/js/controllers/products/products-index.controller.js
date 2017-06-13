@@ -4,8 +4,9 @@ angular
 
 ProductsIndexCtrl.$inject = ['Product'];
 function ProductsIndexCtrl(Product) {
-  const vm = this;
 
+  const vm = this;
+  vm.gorillaImg = 'images/2999.jpg';
   productsIndex();
 
   function productsIndex() {

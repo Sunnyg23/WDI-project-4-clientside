@@ -5,7 +5,7 @@ angular
 MainCtrl.$inject = ['$rootScope', 'CurrentUserService', '$state'];
 function MainCtrl($rootScope, CurrentUserService, $state) {
   const vm = this;
-
+  // document.getElementById('play').play();
   $rootScope.$on('loggedIn', () => {
     vm.user = CurrentUserService.currentUser;
   });

@@ -1,4 +1,36 @@
-<h1 class=" lh-copy white pa1 tracked-tight f-headline-l bg-gold sans-serif measure-narrow lh-title mv0 f1 f1-m mv3">{{brands.brand.name}} <img src="images/2002.jpg"  ui-sref="home" class="fr dib w5 h5 br-100">
+<h1 class="white san-serif lh-copy white pa1 tracked-tight f-headline-l measure-narrow lh-title mv0 f1 f1-m mv3 brandbackground">{{brands.brand.name}} Products <img ng-mouseover="brands.gorillaImg = 'images/3000.jpg'"  ng-mouseleave="brands.gorillaImg = 'images/2999.jpg'" src="{{ brands.gorillaImg }}" ui-sref="home" class="fr dib w5 h5 br-100 grow">
 </h1>
 
-<h1>{{brands.brand.name}}hhhhhhhh</h1>
+{{products.products.name}}
+<br>
+<br>
+<div>
+  <div class="cf pt5" >
+    <div ng-repeat="product in brands.brand.products">
+
+    <div class="fl w-50 w-25-m w-33-l pa2 grow" >
+        <p class ="bg-black sans-serif lh-copy gold pa1 tracked-tight f-headline
+         measure-narrow lh-title mv0 f1 f1-m mv3  brandbackground">{{products.name}}</p>
+      <a ui-sref="productsShow({id: product.id})"  class="aspect-ratio aspect-ratio--1x1 db link dim tc p10">
+          <div class="aspect-ratio--object cover w-100 db outline black-10 br-75"
+          style="background: url({{product.image}}) center;">&nbsp;</div>
+
+        </a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="bg-white sans-serif">
+  <div class="mw9 center pa4 pt5-ns ph7-l">
+    <time class="f6 mb2 dib ttu tracked"><small></small></time>
+    <h3 class="f2 f1-m f-headline-l measure-narrow lh-title mv0">
+      <span class="bg-black-90 lh-copy gold pa1 tracked-tight">
+        "Chocolate, men, coffee – some things are better rich."
+      </span>
+    </h3>
+    <h4 class="f3 fw1 georgia i">– Rodney Dangerfield</h4>
+    <h5 class="f6 ttu tracked black-80"></h5>
+  </div>
+</header>
