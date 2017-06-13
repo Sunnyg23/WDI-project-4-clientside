@@ -6,7 +6,8 @@
   <div class="cf pt5" >
     <div ng-repeat="product in categories.category.brands">
       <div class="fl w-50 w-25-m w-33-l pa2 grow">
-        <p class ="bg-black sans-serif lh-copy gold pa4 tracked-tight f-headline measure-narrow lh-title mv0 f1 f1-m mv3 center sunny ">{{brands.name}}</p>
+        <p class ="bg-black sans-serif lh-copy gold pa1 tracked-tight f-headline
+         measure-narrow lh-title mv0 f1 f1-m mv3 center sunny ">{{product.name}}</p>
         <a ui-sref="brandsShow({id: product.id})"  class="aspect-ratio aspect-ratio--1x1 db link dim tc" >
           <div class="aspect-ratio--object cover w-100 db outline black-10"
           style="background: url({{product.image}}) center;">&nbsp;</div>
@@ -16,3 +17,15 @@
     </div>
   </div>
 </div>
+<header class="bg-white sans-serif">
+  <div class="mw9 center pa4 pt5-ns ph7-l">
+    <time class="f6 mb2 dib ttu tracked"><small></small></time>
+    <h3 class="f2 f1-m f-headline-l measure-narrow lh-title mv0">
+      <span class="bg-black-90 lh-copy gold pa1 tracked-tight">
+        "Chocolate, men, coffee – some things are better rich."
+      </span>
+    </h3>
+    <h4 class="f3 fw1 georgia i">– Rodney Dangerfield</h4>
+    <h5 class="f6 ttu tracked black-80"></h5>
+  </div>
+</header>

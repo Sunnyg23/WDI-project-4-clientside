@@ -3,15 +3,14 @@
 <br>
 <br>
 
-<img class="{{brands.product.images}}">
-<img class="{{vm.products}}">
 
 <div>
-<div class="cf pt5" >
-  <div ng-repeat="product in products.product.name">
-    <div class="fl w-50 w-25-m w-33-l pa2 grow" >
-      <a ui-sref="productsShow({id: products.product.id})"  class="aspect-ratio aspect-ratio--1x1 db link dim tc" >
-        <img class="{{products.product.image}}">
+<div class="cf pt5 bg-black" >
+    <div class=" pa2 grow" >
+      <a ui-sref="productsShow({id: products.product.id})"  class="aspect-ratio aspect-ratio--1x1 db link dim tc measure center" >
+        <p class="bg-black sans-serif lh-copy black  tracked-tight f-headline measure-narrow lh-title mv0 f1 f1-m mv3 center productbackground" >£{{products.product.price}}</p>
+        <img ng-src="{{products.product.image}}">
+        <p class="bg-black sans-serif lh-copy black pa1 tracked-tight f-headline measure-narrow lh-title mv0 f1 f1-m mv3 center productbackground">{{products.product.description}}</p>
         <div class="aspect-ratio--object cover w-100 db outline black-10 br-75"
         style="background: url({{product.image}}) center;">&nbsp;</div>
       </a>
